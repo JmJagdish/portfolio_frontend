@@ -1,0 +1,243 @@
+@import "tailwindcss";
+
+:root {
+  /* =====================
+     COLORS
+  ====================== */
+
+  --primary-color: #00a8e8;
+
+  --secondary-color: #023047;
+
+  --background-color: #ffffff;
+
+  --foreground-color: #171717;
+
+  --muted-color: #6b7280;
+
+  --card-color: #ffffff;
+
+  --text-primary: #171717;
+
+  --text-secondary: #f7f9fc;
+
+  --text-light: #d1d5db;
+
+  /* =====================
+     TYPOGRAPHY
+  ====================== */
+
+  --font-body: var(--font-open-sans);
+
+  --font-heading: var(--font-cormorant);
+
+  /* Mobile default */
+
+  --heading-xl: 36px;
+
+  --heading-lg: 30px;
+
+  --heading-md: 24px;
+
+  --subheading-size: 18px;
+
+  --body-size: 14px;
+
+  --small-size: 12px;
+
+  /* =====================
+     SPACING
+  ====================== */
+
+  --section-space: 96px;
+
+  --container-size: 1280px;
+
+  /* =====================
+     COMPONENT STYLE
+  ====================== */
+
+  --card-radius: 24px;
+
+  --button-radius: 999px;
+
+  --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* =====================
+   TABLET
+====================== */
+
+@media (min-width: 640px) {
+  :root {
+    --heading-xl: 48px;
+
+    --heading-lg: 36px;
+
+    --heading-md: 28px;
+
+    --subheading-size: 20px;
+
+    --body-size: 16px;
+
+    --small-size: 14px;
+  }
+}
+
+/* =====================
+   DESKTOP
+====================== */
+
+@media (min-width: 1024px) {
+  :root {
+    --heading-xl: 64px;
+
+    --heading-lg: 48px;
+
+    --heading-md: 32px;
+
+    --subheading-size: 24px;
+
+    --body-size: 18px;
+
+    --small-size: 16px;
+  }
+}
+
+/* =====================
+   LARGE SCREEN
+====================== */
+
+@media (min-width: 1440px) {
+  :root {
+    --heading-xl: 72px;
+
+    --heading-lg: 56px;
+
+    --heading-md: 36px;
+
+    --subheading-size: 28px;
+
+    --body-size: 20px;
+  }
+}
+
+/* =====================
+   TAILWIND V4 THEME
+====================== */
+
+@theme inline {
+  /* Colors */
+
+  --color-primary: var(--primary-color);
+
+  --color-secondary: var(--secondary-color);
+
+  --color-background: var(--background-color);
+
+  --color-foreground: var(--foreground-color);
+
+  --color-muted: var(--muted-color);
+
+  --color-text-primary: var(--text-primary);
+
+  --color-text-secondary: var(--text-secondary);
+
+  --color-text-light: var(--text-light);
+
+  /* Fonts */
+
+  --font-sans: var(--font-body);
+
+  --font-heading: var(--font-heading);
+
+  /* Text Sizes */
+
+  --text-heading-xl: var(--heading-xl);
+
+  --text-heading-lg: var(--heading-lg);
+
+  --text-heading-md: var(--heading-md);
+
+  --text-subheading: var(--subheading-size);
+
+  --text-body: var(--body-size);
+
+  --text-small: var(--small-size);
+
+  /* Radius */
+
+  --radius-card: var(--card-radius);
+
+  --radius-button: var(--button-radius);
+
+  /* Shadow */
+
+  --shadow-card: var(--card-shadow);
+}
+
+/* =====================
+   GLOBAL STYLE
+====================== */
+
+body {
+  background: var(--background-color);
+
+  color: var(--foreground-color);
+
+  font-family: var(--font-body);
+}
+
+/* Headings use Cormorant */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+/* =====================
+   SCROLL ANIMATION
+====================== */
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}
+
+/* =====================
+   LENIS SMOOTH SCROLL
+====================== */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

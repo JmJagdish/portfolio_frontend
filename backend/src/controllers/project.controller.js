@@ -1,4 +1,5 @@
 import { getProjects } from "../services/project.service.js";
+import { uploadImage, deleteImage } from "../services/cloudinary.service.js";
 
 export const fetchProjects = async (req, res) => {
   try {
