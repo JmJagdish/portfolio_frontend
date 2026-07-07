@@ -1,119 +1,171 @@
 @import "tailwindcss";
 
+/* =====================================================
+   DESIGN TOKENS
+===================================================== */
+
 :root {
-  /* =====================
-     COLORS
-  ====================== */
+  /* =====================================================
+     LIGHT THEME
+  ===================================================== */
 
-  --primary-color: #00a8e8;
+  /* Brand */
 
-  --secondary-color: #023047;
+  --primary-color: #22d3ee;
+  --primary-hover: #06b6d4;
+
+  --secondary-color: #2563eb;
+  --secondary-hover: #1d4ed8;
+
+  --accent-color: #38bdf8;
+
+  /* Backgrounds */
 
   --background-color: #ffffff;
-
-  --foreground-color: #171717;
-
-  --muted-color: #6b7280;
-
+  --background-secondary: #f8fafc;
   --card-color: #ffffff;
+  --surface-color: #f1f5f9;
 
-  --text-primary: #171717;
+  /* Text */
 
-  --text-secondary: #f7f9fc;
+  --foreground-color: #0f172a;
 
-  --text-light: #d1d5db;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-light: #94a3b8;
 
-  /* =====================
-     TYPOGRAPHY
-  ====================== */
+  /* UI */
+
+  --border-color: #dbeafe;
+  --muted-color: #64748b;
+
+  --success-color: #22c55e;
+  --warning-color: #f59e0b;
+  --danger-color: #ef4444;
+
+  /* Effects */
+
+  --glow-color: rgba(34, 211, 238, 0.18);
+
+  --card-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+  --hover-shadow: 0 20px 50px rgba(34, 211, 238, 0.18);
+
+  /* Typography */
 
   --font-body: var(--font-open-sans);
-
   --font-heading: var(--font-cormorant);
 
-  /* Mobile default */
+  /* Mobile */
 
   --heading-xl: 36px;
-
   --heading-lg: 30px;
-
   --heading-md: 24px;
 
   --subheading-size: 18px;
 
   --body-size: 14px;
-
   --small-size: 12px;
 
-  /* =====================
-     SPACING
-  ====================== */
+  /* Layout */
 
   --section-space: 96px;
-
   --container-size: 1280px;
 
-  /* =====================
-     COMPONENT STYLE
-  ====================== */
+  /* Radius */
 
   --card-radius: 24px;
-
   --button-radius: 999px;
-
-  --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
-/* =====================
+/* =====================================================
+   DARK THEME
+===================================================== */
+
+.dark {
+  /* Brand */
+
+  --primary-color: #22d3ee;
+  --primary-hover: #06b6d4;
+
+  --secondary-color: #2563eb;
+  --secondary-hover: #3b82f6;
+
+  --accent-color: #38bdf8;
+
+  /* Backgrounds */
+
+  --background-color: #0b1120;
+  --background-secondary: #111827;
+  --card-color: #1e293b;
+  --surface-color: #0f172a;
+
+  /* Text */
+
+  --foreground-color: #f8fafc;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-light: #94a3b8;
+
+  /* UI */
+
+  --border-color: #334155;
+  --muted-color: #94a3b8;
+
+  --success-color: #22c55e;
+  --warning-color: #fbbf24;
+  --danger-color: #f87171;
+
+  /* Effects */
+
+  --glow-color: rgba(34, 211, 238, 0.25);
+
+  --card-shadow: 0 15px 45px rgba(0, 0, 0, 0.45);
+  --hover-shadow: 0 20px 60px rgba(34, 211, 238, 0.22);
+}
+
+/* =====================================================
    TABLET
-====================== */
+===================================================== */
 
 @media (min-width: 640px) {
   :root {
     --heading-xl: 48px;
-
     --heading-lg: 36px;
-
     --heading-md: 28px;
 
     --subheading-size: 20px;
 
     --body-size: 16px;
-
     --small-size: 14px;
   }
 }
 
-/* =====================
+/* =====================================================
    DESKTOP
-====================== */
+===================================================== */
 
 @media (min-width: 1024px) {
   :root {
     --heading-xl: 64px;
-
     --heading-lg: 48px;
-
     --heading-md: 32px;
 
     --subheading-size: 24px;
 
     --body-size: 18px;
-
     --small-size: 16px;
   }
 }
 
-/* =====================
+/* =====================================================
    LARGE SCREEN
-====================== */
+===================================================== */
 
 @media (min-width: 1440px) {
   :root {
     --heading-xl: 72px;
-
     --heading-lg: 56px;
-
     --heading-md: 36px;
 
     --subheading-size: 28px;
@@ -122,73 +174,87 @@
   }
 }
 
-/* =====================
-   TAILWIND V4 THEME
-====================== */
+/* =====================================================
+   TAILWIND V4 TOKENS
+===================================================== */
 
 @theme inline {
+
   /* Colors */
 
   --color-primary: var(--primary-color);
+  --color-primary-hover: var(--primary-hover);
 
   --color-secondary: var(--secondary-color);
+  --color-secondary-hover: var(--secondary-hover);
+
+  --color-accent: var(--accent-color);
 
   --color-background: var(--background-color);
+  --color-background-secondary: var(--background-secondary);
+
+  --color-card: var(--card-color);
+  --color-surface: var(--surface-color);
 
   --color-foreground: var(--foreground-color);
+
+  --color-border: var(--border-color);
 
   --color-muted: var(--muted-color);
 
   --color-text-primary: var(--text-primary);
-
   --color-text-secondary: var(--text-secondary);
-
   --color-text-light: var(--text-light);
+
+  --color-success: var(--success-color);
+  --color-warning: var(--warning-color);
+  --color-danger: var(--danger-color);
 
   /* Fonts */
 
   --font-sans: var(--font-body);
-
   --font-heading: var(--font-heading);
 
-  /* Text Sizes */
+  /* Typography */
 
   --text-heading-xl: var(--heading-xl);
-
   --text-heading-lg: var(--heading-lg);
-
   --text-heading-md: var(--heading-md);
 
   --text-subheading: var(--subheading-size);
 
   --text-body: var(--body-size);
-
   --text-small: var(--small-size);
 
   /* Radius */
 
   --radius-card: var(--card-radius);
-
   --radius-button: var(--button-radius);
 
-  /* Shadow */
+  /* Shadows */
 
   --shadow-card: var(--card-shadow);
+  --shadow-hover: var(--hover-shadow);
 }
 
-/* =====================
-   GLOBAL STYLE
-====================== */
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: var(--background-color);
-
   color: var(--foreground-color);
-
   font-family: var(--font-body);
-}
 
-/* Headings use Cormorant */
+  transition:
+    background-color .35s ease,
+    color .35s ease,
+    border-color .35s ease;
+}
 
 h1,
 h2,
@@ -197,11 +263,36 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
+  color: var(--text-primary);
 }
 
-/* =====================
-   SCROLL ANIMATION
-====================== */
+::selection {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Custom Scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
+/* =====================================================
+   ANIMATION
+===================================================== */
 
 @keyframes scroll {
   from {
@@ -217,9 +308,9 @@ h6 {
   animation: scroll 25s linear infinite;
 }
 
-/* =====================
-   LENIS SMOOTH SCROLL
-====================== */
+/* =====================================================
+   LENIS
+===================================================== */
 
 html.lenis,
 html.lenis body {
