@@ -1,41 +1,69 @@
 import React from "react";
-import { cn } from "../lib/utils";
+import { cn } from "@/lib/utils";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  children: React.ReactNode;
   loading?: boolean;
+  children: React.ReactNode;
 };
 
-const Button = ({
-  children,
-  className,
-  loading = false,
-  disabled,
-  type = "button",
-  ...props
-}: ButtonProps) => {
-  return (
-    <button
-      type={type}
-      disabled={disabled || loading}
-      className={cn(
-        "rounded-full px-7 py-2 cursor-pointer",
-        "text-white",
-        "bg-linear-to-r from-cyan-400 to-blue-600",
-        "border-2",
-        "transition-all duration-300",
-        "hover:bg-none hover:bg-white",
-        "hover:border-2",
-        "hover:text-primary",
-        "hover:border-primary",
-        "disabled:cursor-not-allowed disabled:opacity-50",
-        className
-      )}
-      {...props}
-    >
-      {loading ? "Loading..." : children}
-    </button>
-  );
-};
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      children,
+      className,
+      loading = false,
+      disabled,
+      type = "button",
+      ...props
+    },
+    ref,
+  ) => {
+    return (
+      <button
+        ref={ref}
+        type={type}
+        disabled={disabled || loading}
+        className={cn(
+          `
+          inline-flex
+          items-center
+          justify-center
+          cursor-pointer
+          hover:-translate-y-0.5
+          hover:scale-105
 
-export default Button;
+          rounded-button
+
+          bg-primary
+          px-7
+          py-2.5
+
+          text-body
+          font-semibold
+          text-white
+
+          transition-all
+          duration-300
+
+          hover:bg-primary/90
+          hover:shadow-lg
+          shadow-[0_15px_45px_rgba(0,168,232,0.10)]
+
+          active:scale-[0.98]
+
+          disabled:pointer-events-none
+          disabled:opacity-50
+          `,
+          className,
+        )}
+        {...props}
+      >
+        {loading ? "Loading..." : children}
+      </button>
+    );
+  },
+);
+
+Button.displayName = "Button";
+
+export default React.memo(Button);

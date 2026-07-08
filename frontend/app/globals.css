@@ -36,7 +36,7 @@
 
   /* UI */
 
-  --border-color: #dbeafe;
+  --border-color: #c7cfda;
   --muted-color: #64748b;
 
   --success-color: #22c55e;
@@ -84,7 +84,7 @@
 .dark {
   /* Brand */
 
-  --primary-color: #22d3ee;
+  --primary-color: #0ea9c1;
   --primary-hover: #06b6d4;
 
   --secondary-color: #2563eb;
