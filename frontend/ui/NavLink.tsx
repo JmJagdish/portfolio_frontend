@@ -18,7 +18,7 @@ export default function NavLink({
       href={href}
       className={cn(
         `
-        text-text-primary
+        text-primary
         transition-colors
         duration-300
         hover:text-primary

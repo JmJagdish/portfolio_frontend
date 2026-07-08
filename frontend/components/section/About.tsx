@@ -5,6 +5,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Code2, Database } from "lucide-react";
 import Button from "@/ui/Button";
+import Container from "@/ui/Container";
+import Section from "@/ui/Section";
+import Card from "@/ui/Card";
 
 type SkillCardProps = {
   icon: React.ReactNode;
@@ -42,53 +45,52 @@ const SkillCard = React.memo(
     section2Items,
   }: SkillCardProps) => {
     return (
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="group p-8 sm:p-10 text-center border border-white/70 
-        bg-white/80 backdrop-blur-xl rounded-2xl
-        hover:-translate-y-2 transition-all duration-300
-        hover:shadow-[0_20px_60px_rgba(0,168,232,0.15)]"
-      >
-        {/* Icon */}
-
-        <div className="flex justify-center mb-6">
-          <div
-            className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#00a8e8]/10 text-[#00a8e8] shadow-[0_8px_30px_rgba(0,168,232,0.15)]"
+      <Container className="mt-0">
+        <Section>
+          <Card
+            className="group p-8 sm:p-10 h-[660px] text-center hover:-translate-y-2 transition-all duration-300
+                      hover:shadow-[0_20px_60px_rgba(0,168,232,0.15)]"
           >
-            {icon}
-          </div>
-        </div>
+            {/* Icon */}
 
-        <h3 className="text-xl font-bold text-slate-800">{title}</h3>
+            <div className="flex justify-center mb-6">
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-background text-primary shadow-[0_8px_30px_rgba(0,168,232,0.15)]">
+                {icon}
+              </div>
+            </div>
 
-        <p className="mt-4 text-sm leading-7 text-slate-500">{description}</p>
+            <h3 className="text-xl font-bold text-text-primary">{title}</h3>
 
-        <div className="mt-8">
-          <h4 className="mb-4 text-sm font-semibold text-[#00a8e8]">
-            {section1Title}
-          </h4>
+            <p className="mt-4 text-sm leading-7 text-text-light">
+              {description}
+            </p>
 
-          <ul className="space-y-2 text-sm text-slate-500">
-            {section1Items.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
+            <div className="mt-4">
+              <h4 className="mb-4 text-sm font-semibold text-primary">
+                {section1Title}
+              </h4>
 
-        <div className="mt-8">
-          <h4 className="mb-4 text-sm font-semibold text-[#00a8e8]">
-            {section2Title}
-          </h4>
+              <ul className="space-y-2 text-sm text-text-light">
+                {section1Items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
 
-          <ul className="space-y-2 text-sm text-slate-500">
-            {section2Items.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </motion.div>
+            <div className="mt-8">
+              <h4 className="mb-4 text-sm font-semibold text-primary">
+                {section2Title}
+              </h4>
+
+              <ul className="space-y-2 text-sm text-text-light">
+                {section2Items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </Card>
+        </Section>
+      </Container>
     );
   },
 );
@@ -97,7 +99,7 @@ SkillCard.displayName = "SkillCard";
 
 const AboutSection = () => {
   return (
-    <section className="relative overflow-hidden bg-[#f8fbff] py-20">
+    <section className="relative overflow-hidden bg-background py-20">
       {/* Background glow */}
 
       <div className="absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[#00a8e8]/20 blur-3xl" />
