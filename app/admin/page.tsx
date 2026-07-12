@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import AdminPage from "@/components/admin/AdminHome";
+import AdminHomePage from "@/components/admin/AdminHome";
 
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Admin() {
   return (
     <main>
-      <AdminPage />
+      <AdminHomePage />
     </main>
   );
 }
