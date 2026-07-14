@@ -25,7 +25,7 @@ const companies = [
 
 export default function WorkPlaces() {
   return (
-    <Container className="mt-0">
+    <Container>
       <Section className="relative overflow-hidden bg-background">
         {/* Background Glow */}
 

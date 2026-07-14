@@ -30,10 +30,18 @@ const ContactCard = React.memo(() => {
 
 ContactCard.displayName = "ContactCard";
 
-const Footer = () => {
+type FooterProps = {
+  showContactCard?: boolean;
+};
+
+const Footer = ({ showContactCard = true }: FooterProps) => {
   return (
-    <footer className="relative w-full rounded-t-3xl bg-primary mt-20 pt-44 pb-16 lg:pt-32">
-      <ContactCard />
+    <footer
+      className={`relative w-full rounded-t-3xl bg-primary pb-16 ${
+        showContactCard ? "mt-20 pt-44 lg:pt-32" : "mt-0 pt-16"
+      }`}
+    >
+      {showContactCard && <ContactCard />}
 
       <div className="container mx-auto flex flex-col items-center px-6 text-center">
         {/* Logo */}

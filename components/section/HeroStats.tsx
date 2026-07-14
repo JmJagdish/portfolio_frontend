@@ -57,8 +57,8 @@ const stats = [
 
 const HeroStats = () => {
   return (
-    <Container className="mt-0">
-      <Section id="skills" className="text-center">
+    <Container id="skills" className="scroll-mt-20">
+      <Section className="text-center">
         <div className="rounded-3xl">
           {/* Heading */}
           <div className="mb-8 text-center">

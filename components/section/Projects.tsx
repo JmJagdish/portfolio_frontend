@@ -11,9 +11,8 @@ import { useProjects } from "@/hooks/useProjects";
 export default function Projects() {
   const { projects } = useProjects();
   return (
-    <Container className="mt-0">
-      <Section
-        id="projects">
+    <Container id="projects" className="scroll-mt-20">
+      <Section>
         {/* Background Glow */}
 
         <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full blur-3xl" />
@@ -21,12 +20,12 @@ export default function Projects() {
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
           {/* Heading */}
 
-          <div className="mb-14 text-center">
+          <div className="text-center">
             <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl lg:text-5xl">
               Featured <span className="text-primary">Projects</span>
             </h2>
 
-            <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-500 sm:text-lg">
+            <p className="mx-auto my-6 max-w-3xl text-base leading-8 text-slate-500 sm:text-lg">
               I like building personal projects and websites in my free time.
               <br />
               Here are some of my featured projects.
@@ -39,10 +38,11 @@ export default function Projects() {
             {projects.map((project) => (
               <Card
                 key={project._id}
-                className="group flex min-h-125 flex-col overflow-hidden p-4 text-center">
+                className="group flex min-h-125 flex-col overflow-hidden p-4 text-center"
+              >
                 {/* Image */}
 
-                <div className="relative mb-8 h-44 w-full">
+                <div className="relative h-44 w-full">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -55,7 +55,7 @@ export default function Projects() {
 
                 {/* Title */}
 
-                <h3 className="mb-5 text-xl font-bold text-slate-800">
+                <h3 className="text-xl p-4 font-bold text-slate-800">
                   {project.title}
                 </h3>
 

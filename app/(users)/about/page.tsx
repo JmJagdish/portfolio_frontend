@@ -13,7 +13,7 @@ export default function AboutPage() {
     <main>
       <Navbar />
       <AboutMe />
-      <Footer />
+      <Footer showContactCard={false} />
     </main>
   );
 }

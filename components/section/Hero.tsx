@@ -10,7 +10,7 @@ const HERO_SUBTITLE = "I design, build and code things for web and mobile";
 
 export default function HeroSection() {
   return (
-    <Container>
+    <Container className="mt-20">
       <p className="mb-6 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-small font-medium text-primary">
         {HERO_TEXT}
       </p>
